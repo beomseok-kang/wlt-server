@@ -29,6 +29,10 @@ You can check the stacks [here](https://github.com/beomseok-kang/wlt-renewal).
 
 ## Version Log
 
+#### Ver 0.1.2
+
+Trying to deploy and run to test if things work
+
 #### Ver 0.1.1
 
 Basic routes, schemas done.

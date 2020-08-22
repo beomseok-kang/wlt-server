@@ -3,6 +3,8 @@ const path = require('path');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
+const helmet = require('helmet');
+const hpp = require('hpp');
 
 dotenv.config();
 
@@ -10,6 +12,7 @@ const indexRouter = require('./routes');
 const webSocket = require('./services/socket');
 const connectToMongo = require('./schemas');
 const sessionMiddleware = require('./middlewares/session');
+const logger = require('./logger');
 
 const app = express();
 
@@ -19,11 +22,31 @@ app.set('port', process.env.PORT || 8000);
 connectToMongo();
 
 // middlewares
-app.use(morgan('dev'));
+if (process.env.NODE_ENV === 'production') {
+    app.use(morgan('combined'));
+    app.use(helmet());
+    app.use(hpp());
+} else {
+    app.use(morgan('dev'));
+}
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
+
+const sessionOptions = {
+    resave: false,
+    saveUninitialized: false,
+    secret: process.env.COOKIE_SECRET,
+    cookie: {
+        httpOnly: true,
+        secure: false
+    }
+};
+if (process.env.NODE_ENV === 'production') {
+    sessionOptions.proxy = true;
+}
+const sessionMiddleware = session(sessionOptions);
 app.use(sessionMiddleware);
 
 // router
@@ -39,7 +62,7 @@ app.use((req, res, next) => {
 
 // error handler
 app.use((err, req, res, next) => {
-    console.error(err);
+    logger.error(err);
 });
 
 // server (listener)

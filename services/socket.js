@@ -1,5 +1,6 @@
 const SocketIO = require('socket.io');
 const axios = require('axios');
+const logger = require('../logger');
 
 module.exports = (server, app, sessionMiddleware) => {
     const io = SocketIO(server, { path: '/socket' });
@@ -13,11 +14,13 @@ module.exports = (server, app, sessionMiddleware) => {
     room.on('connection', (socket) => {
         const req = socket.request;
         const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-        const teamName = 'all';
+        const teamName = socket.request.headers.referer
+            .split('/')[socket.request.headers.referer.split('/').length - 1]
+            .replace(/\?.+/,'');
 
         // join namespace room of teamName
         socket.join(teamName);
-
+        console.log('hello user! of: ', teamName);
 
         // socket disconnection
         socket.on('disconnect', () => {
@@ -27,12 +30,13 @@ module.exports = (server, app, sessionMiddleware) => {
 
         // chatting emit to room (to sockets in the same room)
         socket.on('chat', (data) => {
-            socket.to(data.room).emit(data);
+            logger.info('new chat: ',teamName,  data.chat);
+            socket.to(teamName).emit('new-chat', data);
         })
 
         // socket error
         socket.on('error', (err) => {
-            console.error(err);
+            logger.error(err);
         });
 
         // socket
