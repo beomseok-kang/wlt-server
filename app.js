@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -11,7 +12,6 @@ dotenv.config();
 const indexRouter = require('./routes');
 const webSocket = require('./services/socket');
 const connectToMongo = require('./schemas');
-const sessionMiddleware = require('./middlewares/session');
 const logger = require('./logger');
 
 const app = express();
