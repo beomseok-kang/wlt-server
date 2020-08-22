@@ -17,7 +17,7 @@ const logger = require('./logger');
 const app = express();
 
 // app setting
-app.set('port', process.env.PORT || 8000);
+app.set('port', process.env.PORT || 80);
 // connect to MongoDB
 connectToMongo();
 
