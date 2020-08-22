@@ -1,6 +1,6 @@
 {
   "name": "watch-lck-together",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "Let's Watch LCK Together",
   "main": "app.js",
   "scripts": {
