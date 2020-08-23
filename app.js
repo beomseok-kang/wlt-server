@@ -43,9 +43,9 @@ const sessionOptions = {
         secure: false
     }
 };
-if (process.env.NODE_ENV === 'production') {
-    sessionOptions.proxy = true;
-}
+// if (process.env.NODE_ENV === 'production') {
+//     sessionOptions.proxy = true;
+// }
 const sessionMiddleware = session(sessionOptions);
 app.use(sessionMiddleware);
 
