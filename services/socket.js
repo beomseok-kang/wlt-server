@@ -14,9 +14,7 @@ module.exports = (server, app, sessionMiddleware) => {
     room.on('connection', (socket) => {
         const req = socket.request;
         const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-        const teamName = socket.request.headers.referer
-            .split('/')[socket.request.headers.referer.split('/').length - 1]
-            .replace(/\?.+/,'');
+        const teamName = req._query.team;
 
         // join namespace room of teamName
         socket.join(teamName);
@@ -32,7 +30,7 @@ module.exports = (server, app, sessionMiddleware) => {
         socket.on('chat', (data) => {
             logger.info(`new chat: ${teamName}, ${data.chat} ___ ${ip}`, );
             socket.to(teamName).emit('new-chat', data);
-        })
+        });
 
         // socket error
         socket.on('error', (err) => {
