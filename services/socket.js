@@ -30,7 +30,7 @@ module.exports = (server, app, sessionMiddleware) => {
 
         // chatting emit to room (to sockets in the same room)
         socket.on('chat', (data) => {
-            logger.info('new chat: ',teamName,  data.chat);
+            logger.info(`new chat: ${teamName}, ${data.chat} ___ ${ip}`, );
             socket.to(teamName).emit('new-chat', data);
         })
 
