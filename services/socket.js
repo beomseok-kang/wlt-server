@@ -2,7 +2,7 @@ const SocketIO = require('socket.io');
 const axios = require('axios');
 const logger = require('../logger');
 
-module.exports = (server, app, sessionMiddleware) => {
+module.exports = (server, app) => {
     const io = SocketIO(server, { path: '/socket' });
     app.set('io', io);
     const room = io.of('/room');

@@ -16,8 +16,6 @@ const logger = require('./logger');
 
 const app = express();
 
-// app setting
-app.set('port', process.env.PORT || 80);
 // connect to MongoDB
 connectToMongo();
 
@@ -66,6 +64,5 @@ app.use((err, req, res, next) => {
 });
 
 // server (listener)
-const server = app.listen(app.get('port'));
 
-webSocket(server, app, sessionMiddleware);
+module.exports = app;
