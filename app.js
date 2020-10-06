@@ -10,16 +10,12 @@ module.exports = (handle) => {
 
   dotenv.config();
 
-  // const indexRouter = require("./routes");
   const webSocket = require("./services/socket");
-  // const connectToMongo = require("./schemas");
   const logger = require("./logger");
 
   const app = express();
 
   app.set("port", process.env.NODE_ENV === "production" ? 80 : 8000);
-  // connect to MongoDB
-  // connectToMongo();
 
   // middlewares
   if (process.env.NODE_ENV === "production") {
