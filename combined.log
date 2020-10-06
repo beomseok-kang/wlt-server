@@ -17,3 +17,37 @@
 {"message":"new chat: af, 헬로 ___ ::1","level":"info"}
 {"message":"new chat: af, 헬로 ___ ::1","level":"info"}
 {"message":"new chat: af, ㅎ헬로\\ ___ ::1","level":"info"}
+{"message":"new chat: drx, 헬로 ___ ::1","level":"info"}
+{"message":"new chat: drx, 하이 ___ ::1","level":"info"}
+{"message":"new chat: drx, 하이루 ___ ::1","level":"info"}
+{"message":"new chat: drx, hello ___ ::1","level":"info"}
+{"message":"new chat: drx, what up ___ ::1","level":"info"}
+{"message":"new chat: drx, bravo ___ ::ffff:127.0.0.1","level":"info"}
+{"message":"new chat: drx, asdf ___ ::ffff:127.0.0.1","level":"info"}
+{"message":"new chat: drx, asdf ___ ::ffff:127.0.0.1","level":"info"}
+{"message":"new chat: drx, asdf ___ ::ffff:127.0.0.1","level":"info"}
+{"message":"new chat: drx, asd ___ ::ffff:127.0.0.1","level":"info"}
+{"message":"new chat: drx, fas ___ ::ffff:127.0.0.1","level":"info"}
+{"message":"new chat: drx, df ___ ::ffff:127.0.0.1","level":"info"}
+{"message":"new chat: drx, asdf ___ ::ffff:127.0.0.1","level":"info"}
+{"message":"new chat: drx, asd ___ ::ffff:127.0.0.1","level":"info"}
+{"message":"new chat: drx, f ___ ::ffff:127.0.0.1","level":"info"}
+{"message":"new chat: drx, asdf ___ ::ffff:127.0.0.1","level":"info"}
+{"message":"new chat: drx, asd ___ ::ffff:127.0.0.1","level":"info"}
+{"message":"new chat: drx, fasd ___ ::ffff:127.0.0.1","level":"info"}
+{"message":"new chat: drx, f ___ ::ffff:127.0.0.1","level":"info"}
+{"status":404,"level":"error"}
+{"status":404,"level":"error"}
+{"status":404,"level":"error"}
+{"status":404,"level":"error"}
+{"status":404,"level":"error"}
+{"level":"error"}
+{"code":"ERR_INVALID_ARG_TYPE","level":"error"}
+{"message":"new chat: drx, hello ___ ::1","level":"info"}
+{"message":"new chat: drx, what up ___ ::1","level":"info"}
+{"message":"new chat: drx, 헬로 ___ ::1","level":"info"}
+{"code":"ERR_INVALID_ARG_TYPE","level":"error"}
+{"code":"ERR_INVALID_ARG_TYPE","level":"error"}
+{"code":"ERR_INVALID_ARG_TYPE","level":"error"}
+{"code":"ERR_INVALID_ARG_TYPE","level":"error"}
+{"code":"ERR_INVALID_ARG_TYPE","level":"error"}

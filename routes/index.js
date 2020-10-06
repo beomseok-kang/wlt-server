@@ -1,12 +1,7 @@
-const express = require('express');
+const router = require("express").Router();
 
-const roomChat = require('../schemas/roomChat');
-
-const router = express.Router();
-
-router.get('/', (req, res, next) => {
-    res.end(roomChat.toString());
-    console.log(roomChat);
+router.get("/", (req, res, next) => {
+  res.end("hello world!");
 });
 
 module.exports = router;
