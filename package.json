@@ -4,8 +4,9 @@
   "description": "Let's Watch LCK Together",
   "main": "app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production PORT=443 pm2 start app.js -i 1",
+    "start": "cross-env NODE_ENV=production PORT=80 pm2 start app.js -i 1",
     "rundev": "nodemon server",
+    "dev": "next",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Effort",
@@ -20,12 +21,14 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "greenlock-express": "^4.0.3",
     "helmet": "^4.1.0",
     "hpp": "^0.2.3",
     "mongoose": "^5.10.0",
     "morgan": "^1.10.0",
+    "next": "^9.5.3",
     "pm2": "^4.4.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "sanitize-html": "^1.27.3",
     "socket.io": "^2.3.0",
     "winston": "^3.3.3"
