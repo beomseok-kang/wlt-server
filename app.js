@@ -5,8 +5,6 @@ module.exports = (handle) => {
   const morgan = require("morgan");
   const cookieParser = require("cookie-parser");
   const dotenv = require("dotenv");
-  const helmet = require("helmet");
-  const hpp = require("hpp");
 
   dotenv.config();
 
@@ -16,12 +14,11 @@ module.exports = (handle) => {
   const app = express();
 
   app.set("port", process.env.NODE_ENV === "production" ? 80 : 8000);
+  app.disable("x-powered-by");
 
   // middlewares
   if (process.env.NODE_ENV === "production") {
     app.use(morgan("combined"));
-    app.use(helmet());
-    app.use(hpp());
   } else {
     app.use(morgan("dev"));
   }
