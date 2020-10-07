@@ -1,10 +1,10 @@
 import ChatWrapperContainer from "./ChatWrapperContainer";
 import ChatterContainer from "./ChatterContainer";
 
-function ChatSocketContainer({ team }) {
+function ChatSocketContainer({ team, url }) {
   return (
     <>
-      <ChatWrapperContainer />
+      <ChatWrapperContainer url={url} />
       <ChatterContainer team={team} />
     </>
   );

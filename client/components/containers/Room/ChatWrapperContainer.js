@@ -1,8 +1,8 @@
-import YoutubeContainer from "./YoutubeContainer";
 import ChatWrapperPresenter from "../../presenters/Room/ChatWrapperPresenter";
 import { useSelector, useDispatch } from "react-redux";
 import { updateWindowSize } from "../../../redux/reducers/window";
 import { useEffect, useState } from "react";
+import YoutubePresenter from "../../presenters/Room/YoutubePresenter";
 
 const useSize = () => {
   const [size, setSize] = useState({ width: 1000, height: 700 });
@@ -28,7 +28,7 @@ const useSize = () => {
   return size;
 };
 
-function ChatWrapperContainer() {
+function ChatWrapperContainer({ url }) {
   const chat = useSelector((state) => state.chat);
   const dispatch = useDispatch();
   const size = useSize();
@@ -39,7 +39,7 @@ function ChatWrapperContainer() {
 
   return (
     <ChatWrapperPresenter>
-      <YoutubeContainer />
+      <YoutubePresenter url={url} />
       {chat}
     </ChatWrapperPresenter>
   );

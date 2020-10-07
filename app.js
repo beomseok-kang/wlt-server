@@ -39,6 +39,9 @@ module.exports = (handle) => {
   // if (process.env.NODE_ENV === 'production') {
   //     sessionOptions.proxy = true;
   // }
+
+  app.set("url", "https://www.youtube.com/embed/pM2UzJyc6VM");
+
   const sessionMiddleware = session(sessionOptions);
   app.use(sessionMiddleware);
 
@@ -53,19 +56,18 @@ module.exports = (handle) => {
   });
 
   app.post("/admin/posturl", (req, res) => {
-    const data = req.body;
-    console.log(data);
-    const fs = require("fs");
-    fs.writeFile("./client/url.json", JSON.stringify(data), "utf8", (err) => {
-      console.error(err);
-      return res.status(500).send("error: " + err);
-    });
+    const url = req.body.url;
+    app.set("url", url);
     return res.status(200).send("successfully changed");
   });
 
   app.get("/api/numpeople", (req, res) => {
     const numPeople = app.get("numpeople");
     return res.status(200).json(numPeople);
+  });
+  app.get("/api/url", (req, res) => {
+    const url = app.get("url");
+    return res.status(200).json({ url });
   });
 
   // router
