@@ -1,4 +1,4 @@
-# Watch LCK Together Renewal Back End Server
+# Watch LCK Together Renewal
 
 ## About
 
@@ -12,7 +12,11 @@ The development is still on process.
 
 #### Front End
 
-You can check the stacks [here](https://github.com/beomseok-kang/wlt-renewal).
+- React
+- Redux
+- styled-components
+- next.js (server-side rendering)
+- Socket.io
 
 #### Back End
 
@@ -21,7 +25,6 @@ You can check the stacks [here](https://github.com/beomseok-kang/wlt-renewal).
 - Express
 - Mongoose
 - Socket.IO
-- Github (of course!)
 
 #### Database
 
