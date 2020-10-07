@@ -14,7 +14,7 @@ const StyledTeamImage = styled.img`
 
 const StyledSpan = styled.span``;
 
-const StyledRoomButton = styled.a`
+const StyledRoomButton = styled.button`
   /* settings */
   box-sizing: border-box;
   padding: 0 2rem;
@@ -37,16 +37,14 @@ const StyledRoomButton = styled.a`
   font-size: 1rem;
 `;
 
-function RoomButtonPresenter({ children, team, currentNum, maxNum }) {
+function RoomButtonPresenter({ children, team, currentNum, maxNum, onClick }) {
   return (
     <StyledRoomButtonWrapper>
-      <Link href="/room/[team]" as={`/room/${team}`}>
-        <StyledRoomButton>
-          <StyledTeamImage src={`/${team}.png`} alt={`${team} logo`} />
-          {children}
-          <StyledSpan>{`${currentNum} / ${maxNum}`}</StyledSpan>
-        </StyledRoomButton>
-      </Link>
+      <StyledRoomButton onClick={onClick}>
+        <StyledTeamImage src={`/${team}.png`} alt={`${team} logo`} />
+        {children}
+        <StyledSpan>{`${currentNum} / ${maxNum}`}</StyledSpan>
+      </StyledRoomButton>
     </StyledRoomButtonWrapper>
   );
 }

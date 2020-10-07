@@ -2,11 +2,9 @@ import RoomListPresenter from "../../presenters/Lobby/RoomListPresenter";
 import RoomButtonContainer from "./RoomButtonContainer";
 import teams from "../../../teams.json";
 import { getMaxNum } from "../../../lib/funcLib";
-import { getNumPeopleInRoom } from "../../../api/socket";
 
-function RoomListContainer() {
-  const numPeople = getNumPeopleInRoom();
-
+function RoomListContainer({ numPeople }) {
+  console.log(numPeople);
   return (
     <RoomListPresenter>
       {teams.map((team) => {

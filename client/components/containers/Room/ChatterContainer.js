@@ -1,13 +1,35 @@
 import ranStr from "crypto-random-string";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getRandomPosition, rem } from "../../../lib/sizeAndPositioning";
 import { appendChat } from "../../../redux/reducers/chat";
 import ChatterPresenter from "../../presenters/Room/ChatterPresenter";
 
-function ChatterContainer({ socket }) {
+import io from "socket.io-client";
+import { ENDPOINT } from "../../../api/socket";
+
+let socket;
+
+function ChatterContainer({ team }) {
   const [chat, setChat] = useState("");
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    socket = io.connect(ENDPOINT, {
+      path: "/socket",
+      query: `team=${team}`,
+    });
+    socket.on("new-chat", ({ chat, id }) => {
+      const { left, top } = getRandomPosition({
+        width: chat.length * 2 * rem,
+        height: 2 * rem,
+      });
+      dispatch(appendChat({ chat, left, top }, id));
+    });
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
 
   const onChangeInput = (event) => {
     setChat(event.target.value);

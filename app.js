@@ -66,6 +66,11 @@ module.exports = (handle) => {
     return res.status(200).send("successfully changed");
   });
 
+  app.get("/api/numpeople", (req, res) => {
+    const numPeople = app.get("numpeople");
+    return res.status(200).json(numPeople);
+  });
+
   // router
   app.get("/", (req, res) => {
     return app.render(req, res, "/");

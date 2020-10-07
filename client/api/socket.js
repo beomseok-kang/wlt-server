@@ -1,25 +1,8 @@
-async function dummyAsync(ms) {
-  await new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-export const getNumPeopleInRoom = () => {
-  const dummyNumPeople = {
-    all: 400,
-    dwg: 400,
-    drx: 400,
-    gen: 400,
-    t1: 400,
-    af: 150,
-    kt: 150,
-    sb: 150,
-    dyn: 150,
-    sp: 150,
-    hle: 500,
-  };
-  return dummyNumPeople;
-};
-
 const developing = true;
+
+export const API_GET_NUMPEOPLE = developing
+  ? "http://localhost:8000/api/numpeople"
+  : "http://52.78.109.45:80/api/numpeople";
 
 export const ENDPOINT = developing
   ? "http://localhost:8000/room"

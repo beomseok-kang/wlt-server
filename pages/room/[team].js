@@ -1,5 +1,6 @@
 import teams from "../../client/teams.json";
 import { useRouter } from "next/router";
+import React from "react";
 import styled from "styled-components";
 import RoomHeaderContainter from "../../client/components/containers/Room/RoomHeaderContainer";
 import ChatSocketContainer from "../../client/components/containers/Room/ChatSocketContainer";

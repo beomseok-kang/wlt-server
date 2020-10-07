@@ -1,4 +1,4 @@
-# Watch LCK Together Renewal Back End Server
+# Watch LCK Together Renewal
 
 ## About
 

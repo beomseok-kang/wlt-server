@@ -26,24 +26,7 @@ export const getTeamName = (teamName) => {
 };
 
 export const getMaxNum = (teamName) => {
-  switch (teamName) {
-    case "dwg":
-      return 500;
-    case "t1":
-      return 500;
-    case "drx":
-      return 500;
-    case "gen":
-      return 500;
-    default:
-      return 200;
-  }
-};
-
-export const getCurrentNum = async (teamName) => {
-  // ... get current number of people in the room
-  const dummyNum = 100;
-  return dummyNum;
+  return 100;
 };
 
 export const addRem = (args) => {
