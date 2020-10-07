@@ -1,4 +1,4 @@
-const developing = true;
+const developing = false;
 
 export const API_GET_NUMPEOPLE = developing
   ? "http://localhost:8000/api/numpeople"
