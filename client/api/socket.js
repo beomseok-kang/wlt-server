@@ -1,17 +1,13 @@
 export const developing = process.env.NODE_ENV !== "production";
 
-export const API_GET_NUMPEOPLE = developing
-  ? "http://localhost:8000/api/numpeople"
-  : "http://52.78.109.45:80/api/numpeople";
+export const base = developing
+  ? "http://localhost:8000"
+  : "http://54.180.1.112";
 
-export const ENDPOINT = developing
-  ? "http://localhost:8000/room"
-  : "http://52.78.109.45:80/room";
+export const API_GET_NUMPEOPLE = base + "/api/numpeople";
 
-export const ENDPOINT_URL = developing
-  ? "http://localhost:8000/admin/posturl"
-  : "http://52.78.109.45:80/admin/posturl";
+export const ENDPOINT = base + "/room";
 
-export const ENDPOINT_LOGIN = developing
-  ? "http://localhost:8000/admin/login"
-  : "http://52.78.109.45:80/admin/login";
+export const ENDPOINT_URL = base + "/admin/posturl";
+
+export const ENDPOINT_LOGIN = base + "/admin/login";
