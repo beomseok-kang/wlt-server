@@ -5,6 +5,7 @@ module.exports = (handle, next) => {
   const morgan = require("morgan");
   const cookieParser = require("cookie-parser");
   const dotenv = require("dotenv");
+  const cors = require("cors");
 
   dotenv.config();
 
@@ -19,6 +20,7 @@ module.exports = (handle, next) => {
   // middlewares
   if (process.env.NODE_ENV === "production") {
     app.use(morgan("combined"));
+    app.use(cors());
   } else {
     app.use(morgan("dev"));
   }

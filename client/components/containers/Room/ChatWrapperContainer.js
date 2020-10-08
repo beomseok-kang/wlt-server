@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateWindowSize } from "../../../redux/reducers/window";
 import { useEffect, useState } from "react";
 import YoutubePresenter from "../../presenters/Room/YoutubePresenter";
+import { removeAllChat } from "../../../redux/reducers/chat";
 
 const useSize = () => {
   const [size, setSize] = useState({ width: 1000, height: 700 });
@@ -35,6 +36,7 @@ function ChatWrapperContainer({ url }) {
 
   useEffect(() => {
     dispatch(updateWindowSize(size));
+    dispatch(removeAllChat());
   }, [size, dispatch]);
 
   return (
