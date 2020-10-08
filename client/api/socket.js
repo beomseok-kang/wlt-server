@@ -1,4 +1,4 @@
-export const developing = false;
+export const developing = process.env.NODE_ENV !== "production";
 
 export const API_GET_NUMPEOPLE = developing
   ? "http://localhost:8000/api/numpeople"

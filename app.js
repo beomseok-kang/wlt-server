@@ -1,4 +1,4 @@
-module.exports = (handle) => {
+module.exports = (handle, next) => {
   const express = require("express");
   const session = require("express-session");
   const path = require("path");
@@ -72,7 +72,7 @@ module.exports = (handle) => {
 
   // router
   app.get("/", (req, res) => {
-    return app.render(req, res, "/");
+    return next.render(req, res, "/");
   });
   app.get("*", (req, res) => {
     return handle(req, res);
@@ -89,6 +89,7 @@ module.exports = (handle) => {
   // error handler
   app.use((err, req, res, next) => {
     logger.error(err);
+    return res.status(500).send("error:", err);
   });
 
   // server (listener)

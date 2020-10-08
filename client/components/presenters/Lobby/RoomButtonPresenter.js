@@ -1,18 +1,21 @@
 import styled from "styled-components";
-import Link from "next/link";
 
 const StyledRoomButtonWrapper = styled.li`
   height: 4rem;
   width: 100%;
-  background: #bbbbbb;
-  border-radius: 1rem;
+  background: #ced4da;
+  color: #343a40;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 2px rgba(150, 150, 150, 1);
+  transition: 0.2s;
+  &:hover {
+    background: #f1f3f5;
+  }
 `;
 
 const StyledTeamImage = styled.img`
   height: 60%;
 `;
-
-const StyledSpan = styled.span``;
 
 const StyledRoomButton = styled.button`
   /* settings */
@@ -33,8 +36,15 @@ const StyledRoomButton = styled.button`
   width: 100%;
 
   /* style */
-  color: #ffffff;
   font-size: 1rem;
+  font-weight: bold;
+`;
+
+const StyledSpan = styled.span`
+  font-weight: normal;
+  strong {
+    font-weight: bold;
+  }
 `;
 
 function RoomButtonPresenter({ children, team, currentNum, maxNum, onClick }) {
@@ -43,7 +53,10 @@ function RoomButtonPresenter({ children, team, currentNum, maxNum, onClick }) {
       <StyledRoomButton onClick={onClick}>
         <StyledTeamImage src={`/${team}.png`} alt={`${team} logo`} />
         {children}
-        <StyledSpan>{`${currentNum} / ${maxNum}`}</StyledSpan>
+        <StyledSpan>
+          <strong>{currentNum}</strong>
+          {` / ${maxNum}`}
+        </StyledSpan>
       </StyledRoomButton>
     </StyledRoomButtonWrapper>
   );

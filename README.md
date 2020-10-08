@@ -15,22 +15,26 @@ The development is still on process.
 - React
 - Redux
 - styled-components
-- next.js (server-side rendering)
-- Socket.io
+- Next.js (server-side rendering)
+- Socket.IO
 
 #### Back End
 
 - Node.js
 - Javascript (Vanilla JS)
 - Express
-- Mongoose
 - Socket.IO
-
-#### Database
-
-- MongoDB
+- ... and other useful libraries
 
 ## Version Log
+
+#### Ver 1.0.0
+
+All the decorations done,
+
+Socket working well,
+
+admin system working well
 
 #### Ver 0.1.2
 

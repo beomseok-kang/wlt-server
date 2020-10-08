@@ -22,8 +22,12 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>{this.props.styleTags}</Head>
-        <body style={{ margin: 0 }}>
+        <Head>
+          <title>Watch LCK Together</title>
+          <link rel="shortcut icon" href="/static/220px-LCK_2018_logo.png" />
+          {this.props.styleTags}
+        </Head>
+        <body style={{ margin: 0, background: "#111" }}>
           <Main />
           <NextScript />
         </body>

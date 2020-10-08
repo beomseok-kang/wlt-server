@@ -4,7 +4,6 @@ import teams from "../../../teams.json";
 import { getMaxNum } from "../../../lib/funcLib";
 
 function RoomListContainer({ numPeople }) {
-  console.log(numPeople);
   return (
     <RoomListPresenter>
       {teams.map((team) => {

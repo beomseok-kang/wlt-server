@@ -5,7 +5,6 @@ const StyledYoutubeFrame = styled.iframe`
   width: 100%;
   border: none;
   margin: 0;
-  pointer-events: none;
   position: absolute;
 `;
 

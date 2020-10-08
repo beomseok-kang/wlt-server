@@ -7,5 +7,5 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
-  runApp(handle);
+  runApp(handle, app);
 });

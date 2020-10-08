@@ -1,12 +1,11 @@
-import Link from "next/link";
-import React from "react";
+import WrapperPresenter from "../client/components/presenters/notfound/WrapperPresenter";
+import { StyledDivCenter } from "./lobby";
 
 function UnfoundPage() {
   return (
-    <>
-      <div>Page Not Found</div>
-      <Link href="/lobby">To Lobby</Link>
-    </>
+    <StyledDivCenter>
+      <WrapperPresenter />
+    </StyledDivCenter>
   );
 }
 
